@@ -1,0 +1,123 @@
+###
+POST http://127.0.0.1:8000/api/register/
+Content-Type: application/json
+
+{
+    "username":"b",
+    "email":"b@gmail.com",
+    "password":"b123"
+}
+
+###
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username":"Merin",
+    "password":"Merin123"
+}
+
+###
+GET http://127.0.0.1:8000/api/notes/
+Accept: application/json
+Authorization:Token b726b23c511c3d6ffbcf87bec3e8e64b41a28df1
+
+###
+POST http://127.0.0.1:8000/api/notes/
+Content-Type: application/json
+Authorization: Token 45cfa90f974cb84f4876a352d2ca05edb211f064
+
+{
+    "title": "JAVA Learning",
+    "discription": "Today I learned JAVA"
+}
+
+### 
+GET http://127.0.0.1:8000/api/notes/2/
+Accept: application/json
+Authorization: Token b726b23c511c3d6ffbcf87bec3e8e64b41a28df1
+
+### PUT 
+PUT http://127.0.0.1:8000/api/notes/2/
+Authorization: Token b726b23c511c3d6ffbcf87bec3e8e64b41a28df1
+Content-Type: application/json
+
+{
+    "title": "Updated JAVA Notes",
+    "discription": "This is my updated JAVA."
+}
+
+### DELETE 
+DELETE http://127.0.0.1:8000/api/notes/1/
+Authorization: Token bbcab4ba8c431e7e86181b6c654061bfbe6c0a20
+
+
+###
+POST http://127.0.0.1:8000/api/logout/
+Content-Type: application/json
+Authorization: Token b726b23c511c3d6ffbcf87bec3e8e64b41a28df1
+
+
+###
+POST http://127.0.0.1:8000/api/jwt_login/
+Content-Type: application/json
+
+{
+    "username":"a",
+    "password":"a123"
+}
+
+
+### 
+GET http://127.0.0.1:8000/api/tasks/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MDk5MjQ4LCJpYXQiOjE3OTUwOTg5NDgsImp0aSI6Ijk0OTAyZjI1OWUzZjQ0ODZhODA0ODA1YTE4YmNmOWU1IiwidXNlcl9pZCI6IjQifQ.qXf4prr8Z2Zu2Ovp9nRIDWIo5dg8w_2i73XDHEZPHog
+Content-Type: application/json
+
+
+{
+    "title": "Learn Django REST Framework",
+    "description": "Practice API development",
+    "due_date": "2026-11-25"
+}
+
+### 
+POST http://127.0.0.1:8000/api/refresh/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTYzMTYyLCJpYXQiOjE3OTUxNjI4NjIsImp0aSI6IjYxNTI0NzAyYjk3NDQxZWNiMWM0ODVhNzNmZTQwMmY2IiwidXNlcl9pZCI6IjQifQ.N7kRyRURC9KU0TKx2xBXqsebjqV3CrUY-oAsMc5MZp0
+{
+    "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc5NTI0OTI2MiwiaWF0IjoxNzk1MTYyODYyLCJqdGkiOiI3NzkzNTQyOTBiOWI0YWNjYTc0ZWQ4NDRjOTc5YzBhNSIsInVzZXJfaWQiOiI0In0.fASkgc87OIZhFtOhxsNNS9RjZX7pZ8IIsvjN9CG95f0"
+}
+
+
+
+###
+GET http://127.0.0.1:8000/task/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTY0MzkyLCJpYXQiOjE3OTUxNjQwOTIsImp0aSI6ImQ2NWQyYzY2OGZiNjQ3YWM5YzVkNDQxNGYxNGYxMzI4IiwidXNlcl9pZCI6IjQifQ.LvVn1QLABRRW4gamrdpr7Spx6pTSiga3SPtOTUXmHMk
+
+### 
+GET http://127.0.0.1:8000/task/1/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTY0MzkyLCJpYXQiOjE3OTUxNjQwOTIsImp0aSI6ImQ2NWQyYzY2OGZiNjQ3YWM5YzVkNDQxNGYxNGYxMzI4IiwidXNlcl9pZCI6IjQifQ.LvVn1QLABRRW4gamrdpr7Spx6pTSiga3SPtOTUXmHMk
+
+
+###
+PUT http://127.0.0.1:8000/task/1/
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTY0MzkyLCJpYXQiOjE3OTUxNjQwOTIsImp0aSI6ImQ2NWQyYzY2OGZiNjQ3YWM5YzVkNDQxNGYxNGYxMzI4IiwidXNlcl9pZCI6IjQifQ.LvVn1QLABRRW4gamrdpr7Spx6pTSiga3SPtOTUXmHMk
+
+
+{
+    "title": "Learn Django REST Framework",
+    "description": "Practice PUT method",
+    "completed": true,
+    "due_date": "2026-11-25"
+}
+
+
+
+###
+DELETE http://127.0.0.1:8000/task/1/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk1MTY0ODM5LCJpYXQiOjE3OTUxNjQ1MzksImp0aSI6IjhhODcxMjk4ZTM4NDQ1MjRiM2M2NzlhNWM0MzliOTRhIiwidXNlcl9pZCI6IjQifQ.5kL4VoslYnTbvZ-UTDMmsaAvJuurPuZdJAY8a50ZlJM
